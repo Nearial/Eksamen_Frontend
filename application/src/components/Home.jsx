@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h2>Nikolaj's CA3</h2>
+      <h2>Nikolaj's Eksamen</h2>
       <p>
         For this project we initially used the startcode from the previous week
         to start from. Thereafter we started by rewriting and polish the backend

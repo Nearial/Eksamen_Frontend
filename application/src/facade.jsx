@@ -2,6 +2,7 @@ import authFacade from "./helperFacades/AuthFacade";
 import jokeFacade from "./helperFacades/JokeFacade";
 import tokenFacade from "./helperFacades/TokenFacade";
 import userFacade from "./helperFacades/UserFacade";
+import sportFacade from "./helperFacades/SportFacade";
 
 function Facade() {
   /** Auth related */
@@ -49,6 +50,15 @@ function Facade() {
     return jokeFacade.getRandomJokes(token);
   };
 
+  /** Sport related */
+  const getSports = () => {
+    return sportFacade.getSports();
+  };
+
+  const addSport = (name, description) => {
+    return sportFacade.addSport(name, description);
+  };
+
   return {
     /** Auth related */
     login,
@@ -64,6 +74,10 @@ function Facade() {
 
     /** Joke related */
     getJokes,
+
+    /** Sport related */
+    getSports,
+    addSport,
   };
 }
 

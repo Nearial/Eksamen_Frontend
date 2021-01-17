@@ -15,6 +15,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import GedInfo from "./components/GedInfo";
 import facade from "./facade";
+import SportInfo from "./components/SportInfo";
+import SportCreate from "./components/SportCreate";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(facade.isLoggedIn());
@@ -53,6 +55,9 @@ function App() {
           <Route path="/Eksamen/ged">
             <GedInfo />
           </Route>
+          <Route path="/Eksamen/sportInfo">
+            <SportInfo />
+          </Route>
           <PrivateRoute
             path="/Eksamen/info/user"
             isLoggedIn={isLoggedIn}
@@ -72,6 +77,11 @@ function App() {
             path="/Eksamen/profile"
             isLoggedIn={isLoggedIn}
             component={Profile}
+          />
+          <PrivateRoute
+            path="/Eksamen/sport/create"
+            isLoggedIn={isLoggedIn}
+            component={SportCreate}
           />
           <Route path="/Eksamen/fanclub/login">
             <Login setLoggedIn={setLoggedIn} />

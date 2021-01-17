@@ -26,6 +26,11 @@ export default function Header({ isLoggedIn, setLoggedIn, isAdmin }) {
                 Info om Geden
               </NavLink>
             </li>
+            <li>
+              <NavLink activeClassName="active" to="/Eksamen/sportInfo">
+                Sport info
+              </NavLink>
+            </li>
             {isLoggedIn && (
               <>
                 <li>
@@ -42,6 +47,16 @@ export default function Header({ isLoggedIn, setLoggedIn, isAdmin }) {
                   <li>
                     <NavLink activeClassName="active" to="/Eksamen/info/users">
                       All Users
+                    </NavLink>
+                  </li>
+                )}
+                {isAdmin && (
+                  <li>
+                    <NavLink
+                      activeClassName="active"
+                      to="/Eksamen/sport/create"
+                    >
+                      Add Sport
                     </NavLink>
                   </li>
                 )}
